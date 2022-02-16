@@ -5,7 +5,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
-      - run: ./contrib/scripts/kind.sh "" 2 "" "" none
-      - run: cd test && FOCUS="K8sServices" NETNEXT=true KUBEPROXY=0 K8S_NODES=3 NO_CILIUM_ON_NODES=kind-worker2 make k8s-kind
-      - run: kind delete cluster
+      - run: sudo ./contrib/scripts/kind.sh "" 2 "" "" none
+      - run: cd test && sudo FOCUS="K8sServices" NETNEXT=true KUBEPROXY=0 K8S_NODES=3 NO_CILIUM_ON_NODES=kind-worker2 make k8s-kind
+      - run: sudo kind delete cluster
 
